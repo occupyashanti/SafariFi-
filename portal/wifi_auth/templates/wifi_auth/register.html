@@ -1,0 +1,144 @@
+{% extends "wifi_auth/base.html" %}
+
+{% block title %}Register - WiFi Portal{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card auth-container">
+            <div class="card-body">
+                <div class="text-center mb-4">
+                    <i class="fas fa-user-plus fa-3x text-primary mb-3"></i>
+                    <h3>Create Account</h3>
+                    <p class="text-muted">Join our WiFi network today</p>
+                </div>
+                
+                {% if form.errors %}
+                <div class="alert alert-danger">
+                    <i class="fas fa-exclamation-circle me-2"></i>
+                    Please correct the errors below.
+                </div>
+                {% endif %}
+                
+                <form method="post" class="needs-validation" novalidate>
+                    {% csrf_token %}
+                    
+                    <div class="mb-3">
+                        <label for="id_username" class="form-label">Username</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="fas fa-user"></i></span>
+                            <input type="text" name="username" id="id_username" class="form-control {% if form.username.errors %}is-invalid{% endif %}" placeholder="Choose a username" required>
+                            {% if form.username.errors %}
+                            <div class="invalid-feedback">
+                                {{ form.username.errors.0 }}
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="id_email" class="form-label">Email (optional)</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                            <input type="email" name="email" id="id_email" class="form-control {% if form.email.errors %}is-invalid{% endif %}" placeholder="Your email address">
+                            {% if form.email.errors %}
+                            <div class="invalid-feedback">
+                                {{ form.email.errors.0 }}
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="id_phone_number" class="form-label">Phone Number</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="fas fa-phone"></i></span>
+                            <input type="tel" name="phone_number" id="id_phone_number" class="form-control {% if form.phone_number.errors %}is-invalid{% endif %}" placeholder="254XXXXXXXXX" required>
+                            {% if form.phone_number.errors %}
+                            <div class="invalid-feedback">
+                                {{ form.phone_number.errors.0 }}
+                            </div>
+                            {% endif %}
+                        </div>
+                        <small class="form-text text-muted">Format: 254XXXXXXXXX (no spaces or dashes)</small>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="id_password1" class="form-label">Password</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                            <input type="password" name="password1" id="id_password1" class="form-control {% if form.password1.errors %}is-invalid{% endif %}" placeholder="Create a strong password" required>
+                            {% if form.password1.errors %}
+                            <div class="invalid-feedback">
+                                {{ form.password1.errors.0 }}
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label for="id_password2" class="form-label">Confirm Password</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                            <input type="password" name="password2" id="id_password2" class="form-control {% if form.password2.errors %}is-invalid{% endif %}" placeholder="Confirm your password" required>
+                            {% if form.password2.errors %}
+                            <div class="invalid-feedback">
+                                {{ form.password2.errors.0 }}
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                    
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-user-plus me-2"></i>Register
+                        </button>
+                    </div>
+                </form>
+                
+                <div class="mt-4 text-center">
+                    <p>Already have an account? <a href="{% url 'login' %}" class="text-decoration-none">Login here</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    // Form validation
+    (function() {
+        'use strict';
+        
+        // Fetch all forms we want to apply validation to
+        const forms = document.querySelectorAll('.needs-validation');
+        
+        // Loop over them and prevent submission
+        Array.from(forms).forEach(form => {
+            form.addEventListener('submit', event => {
+                if (!form.checkValidity()) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
+                
+                form.classList.add('was-validated');
+            }, false);
+        });
+        
+        // Password strength indicator
+        const password1 = document.getElementById('id_password1');
+        const password2 = document.getElementById('id_password2');
+        
+        if (password1 && password2) {
+            password2.addEventListener('keyup', function() {
+                if (password1.value !== password2.value) {
+                    password2.setCustomValidity('Passwords do not match');
+                } else {
+                    password2.setCustomValidity('');
+                }
+            });
+        }
+    })();
+</script>
+{% endblock %}

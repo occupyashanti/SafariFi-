@@ -1,0 +1,260 @@
+{% extends "wifi_auth/base.html" %}
+
+{% block title %}Purchase Voucher - WiFi Portal{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center mt-4">
+    <div class="col-md-10">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h4><i class="fas fa-shopping-cart me-2"></i>Purchase WiFi Voucher</h4>
+                <a href="{% url 'wifi_dashboard' %}" class="btn btn-sm btn-outline-secondary">
+                    <i class="fas fa-arrow-left me-1"></i> Back to Dashboard
+                </a>
+            </div>
+            <div class="card-body">
+                <h5 class="mb-3">Choose Your Plan</h5>
+                
+                <div class="row mb-4">
+                    <div class="col-md-3 col-sm-6 mb-3">
+                        <div class="card h-100 plan-card" data-value="0.5" data-price="5">
+                            <div class="card-header bg-primary text-white text-center py-2">
+                                <h6 class="mb-0">Quick Access</h6>
+                            </div>
+                            <div class="card-body text-center">
+                                <h3 class="mb-2">KES 5</h3>
+                                <p class="mb-1"><i class="fas fa-clock me-1"></i> 30 Minutes</p>
+                                <p class="text-muted small">Perfect for quick browsing</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 mb-3">
+                        <div class="card h-100 plan-card" data-value="1" data-price="9">
+                            <div class="card-header bg-info text-white text-center py-2">
+                                <h6 class="mb-0">Standard</h6>
+                            </div>
+                            <div class="card-body text-center">
+                                <h3 class="mb-2">KES 9</h3>
+                                <p class="mb-1"><i class="fas fa-clock me-1"></i> 1 Hour</p>
+                                <p class="text-muted small">Our most popular option</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 mb-3">
+                        <div class="card h-100 plan-card" data-value="2" data-price="15">
+                            <div class="card-header bg-success text-white text-center py-2">
+                                <h6 class="mb-0">Extended</h6>
+                            </div>
+                            <div class="card-body text-center">
+                                <h3 class="mb-2">KES 15</h3>
+                                <p class="mb-1"><i class="fas fa-clock me-1"></i> 2 Hours</p>
+                                <p class="text-muted small">Great value for longer sessions</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 mb-3">
+                        <div class="card h-100 plan-card" data-value="24" data-price="100">
+                            <div class="card-header bg-warning text-dark text-center py-2">
+                                <h6 class="mb-0">Day Pass</h6>
+                            </div>
+                            <div class="card-body text-center">
+                                <h3 class="mb-2">KES 100</h3>
+                                <p class="mb-1"><i class="fas fa-clock me-1"></i> 24 Hours</p>
+                                <p class="text-muted small">Full day of unlimited access</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row mb-3">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header bg-light">
+                                <h6 class="mb-0">More Options</h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-3 col-6 mb-2">
+                                        <div class="form-check custom-option">
+                                            <input class="form-check-input" type="radio" name="duration" id="option5" value="5">
+                                            <label class="form-check-label" for="option5">5 Hours - KES 35</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-6 mb-2">
+                                        <div class="form-check custom-option">
+                                            <input class="form-check-input" type="radio" name="duration" id="option12" value="12">
+                                            <label class="form-check-label" for="option12">12 Hours - KES 65</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-6 mb-2">
+                                        <div class="form-check custom-option">
+                                            <input class="form-check-input" type="radio" name="duration" id="option72" value="72">
+                                            <label class="form-check-label" for="option72">3 Days - KES 250</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-6 mb-2">
+                                        <div class="form-check custom-option">
+                                            <input class="form-check-input" type="radio" name="duration" id="option168" value="168">
+                                            <label class="form-check-label" for="option168">1 Week - KES 500</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <form id="voucherForm" method="post">
+                    {% csrf_token %}
+                    <input type="hidden" id="duration" name="duration" required>
+                    
+                    <div class="mb-3">
+                        <label for="phone_number" class="form-label">Safaricom Phone Number</label>
+                        <input type="tel" class="form-control" id="phone_number" name="phone_number" 
+                               placeholder="e.g., 254712345678" required>
+                        <small class="text-muted">We'll send an STK Push to this number for payment</small>
+                    </div>
+                    
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-primary" id="payBtn">
+                            Pay via M-Pesa
+                        </button>
+                        <a href="{% url 'wifi_dashboard' %}" class="btn btn-outline-secondary">
+                            Back to Dashboard
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+    // Add custom styles for plan cards
+    document.head.insertAdjacentHTML('beforeend', `
+        <style>
+            .plan-card {
+                cursor: pointer;
+                transition: all 0.3s ease;
+                border: 2px solid transparent;
+            }
+            .plan-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            }
+            .plan-card.selected {
+                border-color: #0d6efd;
+                box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.25);
+            }
+            .custom-option {
+                padding: 10px;
+                border-radius: 5px;
+                transition: all 0.2s ease;
+            }
+            .custom-option:hover {
+                background-color: #f8f9fa;
+            }
+        </style>
+    `);
+
+    // Plan card selection
+    const planCards = document.querySelectorAll('.plan-card');
+    const durationInput = document.getElementById('duration');
+    const radioOptions = document.querySelectorAll('input[type="radio"][name="duration"]');
+    
+    // Function to update selected plan
+    function updateSelectedPlan(value) {
+        durationInput.value = value;
+        
+        // Update visual selection for cards
+        planCards.forEach(card => {
+            if (card.dataset.value === value) {
+                card.classList.add('selected');
+            } else {
+                card.classList.remove('selected');
+            }
+        });
+        
+        // Update radio buttons
+        radioOptions.forEach(radio => {
+            radio.checked = (radio.value === value);
+        });
+    }
+    
+    // Add click event to plan cards
+    planCards.forEach(card => {
+        card.addEventListener('click', function() {
+            updateSelectedPlan(this.dataset.value);
+        });
+    });
+    
+    // Add change event to radio buttons
+    radioOptions.forEach(radio => {
+        radio.addEventListener('change', function() {
+            if (this.checked) {
+                updateSelectedPlan(this.value);
+            }
+        });
+    });
+    
+    // Form submission
+    document.getElementById('voucherForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Validate that a plan is selected
+        if (!durationInput.value) {
+            alert('Please select a plan first');
+            return;
+        }
+        
+        const payBtn = document.getElementById('payBtn');
+        payBtn.disabled = true;
+        payBtn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Processing...';
+        
+        // Get form data
+        const formData = new FormData(this);
+        
+        // Send AJAX request
+        fetch("{% url 'purchase_voucher' %}", {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'X-Requested-With': 'XMLHttpRequest',
+            },
+        })
+        .then(response => {
+            // Check if the response is JSON
+            const contentType = response.headers.get('content-type');
+            if (contentType && contentType.includes('application/json')) {
+                return response.json();
+            } else {
+                throw new Error('Server returned non-JSON response: ' + response.status);
+            }
+        })
+        .then(data => {
+            if (data.status === 'success') {
+                alert('Payment initiated! Check your phone to complete the transaction.');
+                window.location.href = "{% url 'wifi_dashboard' %}";
+            } else {
+                alert('Error: ' + data.message);
+                payBtn.disabled = false;
+                payBtn.innerHTML = 'Pay via M-Pesa';
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('An error occurred. Please try again.');
+            payBtn.disabled = false;
+            payBtn.innerHTML = 'Pay via M-Pesa';
+        });
+    });
+    
+    // Select the first plan by default
+    if (planCards.length > 0) {
+        updateSelectedPlan(planCards[0].dataset.value);
+    }
+</script>
+{% endblock %}

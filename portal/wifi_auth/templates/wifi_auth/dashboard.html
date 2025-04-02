@@ -1,0 +1,361 @@
+{% extends "wifi_auth/base.html" %}
+
+{% block title %}Dashboard - WiFi Portal{% endblock %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-body d-flex align-items-center">
+                <div class="me-3">
+                    <div class="rounded-circle bg-primary d-flex align-items-center justify-content-center" style="width: 60px; height: 60px;">
+                        <i class="fas fa-user text-white fa-2x"></i>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="mb-1">Welcome, {{ user.username }}</h4>
+                    <div>
+                        <span class="badge {% if user.is_premium %}bg-premium{% else %}bg-warning{% endif %} me-2">
+                            <i class="fas {% if user.is_premium %}fa-crown{% else %}fa-user{% endif %} me-1"></i>
+                            {% if user.is_premium %}Premium{% else %}Standard{% endif %} Account
+                        </span>
+                        <span class="badge bg-secondary">
+                            <i class="fas fa-phone me-1"></i>
+                            {{ user.phone_number }}
+                        </span>
+                    </div>
+                </div>
+                <div class="ms-auto">
+                    <a href="{% url 'purchase_voucher' %}" class="btn btn-primary">
+                        <i class="fas fa-ticket-alt me-1"></i> Buy Voucher
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mb-4">
+    <div class="col-md-4">
+        <div class="card stats-card">
+            <div class="card-body">
+                <i class="fas fa-ticket-alt"></i>
+                <div class="stats-value">{{ vouchers|length }}</div>
+                <div class="stats-label">Active Vouchers</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card stats-card">
+            <div class="card-body">
+                <i class="fas fa-clock"></i>
+                <div class="stats-value" id="totalHours">0</div>
+                <div class="stats-label">Hours Remaining</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card stats-card">
+            <div class="card-body">
+                <i class="fas fa-wifi"></i>
+                <div class="stats-value">{% if user.is_premium %}Unlimited{% else %}{{ vouchers|length }}{% endif %}</div>
+                <div class="stats-label">Connections</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mb-4">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0"><i class="fas fa-tags me-2"></i>Available Voucher Plans</h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-3 col-sm-6 mb-3">
+                        <div class="card h-100 border-primary">
+                            <div class="card-header bg-primary text-white text-center py-2">
+                                <h6 class="mb-0">Quick Access</h6>
+                            </div>
+                            <div class="card-body text-center">
+                                <h3 class="mb-2">KES 5</h3>
+                                <p class="mb-1"><i class="fas fa-clock me-1"></i> 30 Minutes</p>
+                                <p class="text-muted small mb-3">Perfect for quick browsing</p>
+                                <a href="{% url 'purchase_voucher' %}" class="btn btn-sm btn-outline-primary">Buy Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 mb-3">
+                        <div class="card h-100 border-info">
+                            <div class="card-header bg-info text-white text-center py-2">
+                                <h6 class="mb-0">Standard</h6>
+                            </div>
+                            <div class="card-body text-center">
+                                <h3 class="mb-2">KES 9</h3>
+                                <p class="mb-1"><i class="fas fa-clock me-1"></i> 1 Hour</p>
+                                <p class="text-muted small mb-3">Our most popular option</p>
+                                <a href="{% url 'purchase_voucher' %}" class="btn btn-sm btn-outline-info">Buy Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 mb-3">
+                        <div class="card h-100 border-success">
+                            <div class="card-header bg-success text-white text-center py-2">
+                                <h6 class="mb-0">Extended</h6>
+                            </div>
+                            <div class="card-body text-center">
+                                <h3 class="mb-2">KES 15</h3>
+                                <p class="mb-1"><i class="fas fa-clock me-1"></i> 2 Hours</p>
+                                <p class="text-muted small mb-3">Great value for longer sessions</p>
+                                <a href="{% url 'purchase_voucher' %}" class="btn btn-sm btn-outline-success">Buy Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 mb-3">
+                        <div class="card h-100 border-warning">
+                            <div class="card-header bg-warning text-dark text-center py-2">
+                                <h6 class="mb-0">Day Pass</h6>
+                            </div>
+                            <div class="card-body text-center">
+                                <h3 class="mb-2">KES 100</h3>
+                                <p class="mb-1"><i class="fas fa-clock me-1"></i> 24 Hours</p>
+                                <p class="text-muted small mb-3">Full day of unlimited access</p>
+                                <a href="{% url 'purchase_voucher' %}" class="btn btn-sm btn-outline-warning">Buy Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-2">
+                    <a href="{% url 'purchase_voucher' %}" class="btn btn-link text-decoration-none">
+                        <i class="fas fa-external-link-alt me-1"></i> View all plans
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h5 class="mb-0"><i class="fas fa-ticket-alt me-2"></i>Your Active Vouchers</h5>
+                {% if vouchers %}
+                <div class="dropdown">
+                    <button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button" id="sortDropdown" data-bs-toggle="dropdown">
+                        <i class="fas fa-sort me-1"></i> Sort
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="sortDropdown">
+                        <li><a class="dropdown-item sort-vouchers" href="#" data-sort="duration">By Duration</a></li>
+                        <li><a class="dropdown-item sort-vouchers" href="#" data-sort="price">By Price</a></li>
+                        <li><a class="dropdown-item sort-vouchers" href="#" data-sort="date">By Date</a></li>
+                    </ul>
+                </div>
+                {% endif %}
+            </div>
+            <div class="card-body">
+                {% if vouchers %}
+                    <div class="row" id="vouchersContainer">
+                        {% for voucher in vouchers %}
+                        <div class="col-md-4 mb-4 voucher-item" 
+                             data-duration="{{ voucher.duration_hours }}" 
+                             data-price="{{ voucher.price }}" 
+                             data-date="{{ voucher.used_at|date:'U' }}">
+                            <div class="card voucher-card {% if voucher.duration_hours >= 24 %}premium{% endif %}">
+                                <div class="card-header d-flex justify-content-between align-items-center py-2">
+                                    <span class="badge {% if voucher.duration_hours >= 24 %}bg-warning{% else %}bg-primary{% endif %}">
+                                        {{ voucher.duration_hours }} Hour{% if voucher.duration_hours > 1 %}s{% endif %}
+                                    </span>
+                                    <span class="badge bg-secondary">KES {{ voucher.price }}</span>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title text-center mb-3">{{ voucher.code }}</h5>
+                                    
+                                    <div class="countdown-container" data-used-at="{{ voucher.used_at|date:'c' }}" data-hours="{{ voucher.duration_hours }}">
+                                        <div class="countdown text-center mb-1">Calculating time remaining...</div>
+                                        <div class="progress">
+                                            <div class="progress-bar bg-success" role="progressbar" style="width: 0%"></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="d-grid gap-2">
+                                        <button class="btn btn-sm {% if voucher.duration_hours >= 24 %}btn-warning{% else %}btn-outline-primary{% endif %} copy-btn" 
+                                                data-code="{{ voucher.code }}">
+                                            <i class="fas fa-copy me-1"></i> Copy Code
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    <div class="text-center py-5">
+                        <i class="fas fa-ticket-alt fa-3x text-muted mb-3"></i>
+                        <h5 class="text-muted">You don't have any active vouchers yet</h5>
+                        <p class="text-muted">Purchase a voucher to access the WiFi network</p>
+                        <a href="{% url 'purchase_voucher' %}" class="btn btn-primary mt-2">
+                            <i class="fas fa-shopping-cart me-1"></i> Buy Voucher Now
+                        </a>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% if user.is_premium %}
+<div class="row mt-4">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0"><i class="fas fa-crown me-2"></i>Premium Benefits</h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <div class="card h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-tachometer-alt fa-2x text-primary mb-3"></i>
+                                <h5>Faster Speeds</h5>
+                                <p class="text-muted">Enjoy premium bandwidth allocation for faster browsing</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="card h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-infinity fa-2x text-primary mb-3"></i>
+                                <h5>Unlimited Access</h5>
+                                <p class="text-muted">Connect without time restrictions or data caps</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="card h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-headset fa-2x text-primary mb-3"></i>
+                                <h5>Priority Support</h5>
+                                <p class="text-muted">Get assistance whenever you need it</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+{% block scripts %}
+<script>
+    // Copy voucher code to clipboard
+    document.querySelectorAll('.copy-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const code = this.getAttribute('data-code');
+            navigator.clipboard.writeText(code).then(() => {
+                const originalText = this.innerHTML;
+                this.innerHTML = '<i class="fas fa-check me-1"></i> Copied!';
+                setTimeout(() => {
+                    this.innerHTML = originalText;
+                }, 2000);
+            });
+        });
+    });
+    
+    // Calculate countdown for each voucher
+    document.querySelectorAll('.countdown-container').forEach(container => {
+        const usedAtStr = container.getAttribute('data-used-at');
+        const durationHours = parseInt(container.getAttribute('data-hours'));
+        const countdownEl = container.querySelector('.countdown');
+        const progressBar = container.querySelector('.progress-bar');
+        
+        if (usedAtStr && countdownEl && progressBar) {
+            const usedAt = new Date(usedAtStr);
+            const expiresAt = new Date(usedAt.getTime() + (durationHours * 60 * 60 * 1000));
+            
+            function updateCountdown() {
+                const now = new Date();
+                const timeLeft = expiresAt - now;
+                
+                if (timeLeft <= 0) {
+                    countdownEl.innerHTML = '<span class="text-danger">Expired</span>';
+                    progressBar.style.width = '0%';
+                    return;
+                }
+                
+                const hoursLeft = Math.floor(timeLeft / (1000 * 60 * 60));
+                const minutesLeft = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                
+                countdownEl.textContent = `${hoursLeft}h ${minutesLeft}m remaining`;
+                
+                // Calculate percentage of time remaining
+                const totalDuration = durationHours * 60 * 60 * 1000;
+                const percentLeft = (timeLeft / totalDuration) * 100;
+                progressBar.style.width = `${percentLeft}%`;
+                
+                // Update progress bar color based on time remaining
+                if (percentLeft < 25) {
+                    progressBar.className = 'progress-bar bg-danger';
+                } else if (percentLeft < 50) {
+                    progressBar.className = 'progress-bar bg-warning';
+                } else {
+                    progressBar.className = 'progress-bar bg-success';
+                }
+            }
+            
+            updateCountdown();
+            setInterval(updateCountdown, 60000); // Update every minute
+        }
+    });
+    
+    // Calculate total hours for stats
+    function calculateTotalHours() {
+        let totalHours = 0;
+        document.querySelectorAll('.countdown-container').forEach(container => {
+            const usedAtStr = container.getAttribute('data-used-at');
+            const durationHours = parseInt(container.getAttribute('data-hours'));
+            
+            if (usedAtStr) {
+                const usedAt = new Date(usedAtStr);
+                const expiresAt = new Date(usedAt.getTime() + (durationHours * 60 * 60 * 1000));
+                const now = new Date();
+                
+                if (expiresAt > now) {
+                    const hoursLeft = Math.floor((expiresAt - now) / (1000 * 60 * 60));
+                    totalHours += hoursLeft;
+                }
+            }
+        });
+        
+        document.getElementById('totalHours').textContent = totalHours;
+    }
+    
+    calculateTotalHours();
+    
+    // Sort vouchers functionality
+    document.querySelectorAll('.sort-vouchers').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const sortBy = this.getAttribute('data-sort');
+            const container = document.getElementById('vouchersContainer');
+            const vouchers = Array.from(container.querySelectorAll('.voucher-item'));
+            
+            vouchers.sort((a, b) => {
+                if (sortBy === 'duration') {
+                    return parseInt(b.getAttribute('data-duration')) - parseInt(a.getAttribute('data-duration'));
+                } else if (sortBy === 'price') {
+                    return parseFloat(b.getAttribute('data-price')) - parseFloat(a.getAttribute('data-price'));
+                } else if (sortBy === 'date') {
+                    return parseInt(b.getAttribute('data-date')) - parseInt(a.getAttribute('data-date'));
+                }
+                return 0;
+            });
+            
+            vouchers.forEach(voucher => container.appendChild(voucher));
+        });
+    });
+</script>
+{% endblock %}
+{% endblock %}
