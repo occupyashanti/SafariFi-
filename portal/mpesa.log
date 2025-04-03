@@ -1,0 +1,289 @@
+INFO 2025-04-02 07:10:14,385 client 99860 139942917478080 Initialized M-Pesa client with base URL: https://sandbox.safaricom.co.ke
+INFO 2025-04-02 07:10:14,477 client 99860 139942917478080 Business Short Code: 174379
+INFO 2025-04-02 07:10:14,478 client 99860 139942917478080 Callback URL: https://yourdomain.com/payment-callback/
+INFO 2025-04-02 07:10:14,482 views 99860 139942917478080 Initiating STK push: Phone=254111304249, Amount=5, Duration=0.5hrs
+INFO 2025-04-02 07:10:14,484 client 99860 139942917478080 Initiating STK push for phone: 254111304249, amount: 5
+INFO 2025-04-02 07:10:14,487 client 99860 139942917478080 Requesting access token from M-Pesa API
+INFO 2025-04-02 07:10:16,706 client 99860 139942917478080 Successfully obtained access token
+INFO 2025-04-02 07:10:16,709 client 99860 139942917478080 Sending STK push request with payload: {"BusinessShortCode": "174379", "Password": "MTc0Mzc5YmZiMjc5ZjlhYTliZGJjZjE1OGU5N2RkNzFhNDY3Y2QyZTBjODkzMDU5YjEwZjc4ZTZiNzJhZGExZWQyYzkxOTIwMjUwNDAyMDcxMDE2", "Timestamp": "20250402071016", "TransactionType": "CustomerPayBillOnline", "Amount": 5, "PartyA": "254111304249", "PartyB": "174379", "PhoneNumber": "254111304249", "CallBackURL": "https://yourdomain.com/payment-callback/", "AccountReference": "WIFI-2M6Z7120", "TransactionDesc": "WIFI voucher 0.5hrs"}
+INFO 2025-04-02 07:10:17,555 client 99860 139942917478080 STK push response: {"MerchantRequestID": "aa10-4361-b7cd-2aa0e34ed7e466714", "CheckoutRequestID": "ws_CO_02042025101016121111304249", "ResponseCode": "0", "ResponseDescription": "Success. Request accepted for processing", "CustomerMessage": "Success. Request accepted for processing"}
+INFO 2025-04-02 07:10:17,555 client 99860 139942917478080 STK push initiated successfully
+ERROR 2025-04-02 07:10:17,693 views 99860 139942917478080 Unexpected error during payment: table wifi_auth_paymenttransaction has no column named created_at
+INFO 2025-04-02 07:13:10,480 client 100213 139817399748288 Initialized M-Pesa client with base URL: https://sandbox.safaricom.co.ke
+INFO 2025-04-02 07:13:10,480 client 100213 139817399748288 Business Short Code: 174379
+INFO 2025-04-02 07:13:10,480 client 100213 139817399748288 Callback URL: https://yourdomain.com/payment-callback/
+INFO 2025-04-02 07:13:10,481 views 100213 139817399748288 Initiating STK push: Phone=254111304249, Amount=5, Duration=0.5hrs
+INFO 2025-04-02 07:13:10,481 client 100213 139817399748288 Initiating STK push for phone: 254111304249, amount: 5
+INFO 2025-04-02 07:13:10,482 client 100213 139817399748288 Requesting access token from M-Pesa API
+INFO 2025-04-02 07:13:12,376 client 100213 139817399748288 Successfully obtained access token
+INFO 2025-04-02 07:13:12,381 client 100213 139817399748288 Sending STK push request with payload: {"BusinessShortCode": "174379", "Password": "MTc0Mzc5YmZiMjc5ZjlhYTliZGJjZjE1OGU5N2RkNzFhNDY3Y2QyZTBjODkzMDU5YjEwZjc4ZTZiNzJhZGExZWQyYzkxOTIwMjUwNDAyMDcxMzEy", "Timestamp": "20250402071312", "TransactionType": "CustomerPayBillOnline", "Amount": 5, "PartyA": "254111304249", "PartyB": "174379", "PhoneNumber": "254111304249", "CallBackURL": "https://yourdomain.com/payment-callback/", "AccountReference": "WIFI-VHZQO5XW", "TransactionDesc": "WIFI voucher 0.5hrs"}
+INFO 2025-04-02 07:13:13,312 client 100213 139817399748288 Raw response status: 200
+INFO 2025-04-02 07:13:13,312 client 100213 139817399748288 Raw response headers: {'content-type': 'application/json;charset=UTF-8', 'cache-control': 'no-store', 'x-request-id': '975599f4-a369-42a6-a71c-ab6df0dad624', 'date': 'Wed, 02 Apr 2025 07:13:13 GMT', 'Set-Cookie': 'visid_incap_2742146=zB+KZEHtRvKRl0FMMcY7tYjj7GcAAAAAQUIPAAAAAAAqB/SvleV5+/UK/FyTYjR8; expires=Wed, 01 Apr 2026 17:15:19 GMT; HttpOnly; path=/; Domain=.safaricom.co.ke; Secure; SameSite=None, incap_ses_6552_2742146=ifd3L9JD+1o7XpQlemHtWojj7GcAAAAAMBns9R4q7EnS85YSkrRYWA==; path=/; Domain=.safaricom.co.ke; Secure; SameSite=None', 'Strict-Transport-Security': 'max-age=31536000', 'X-CDN': 'Imperva', 'Content-Encoding': 'gzip', 'Transfer-Encoding': 'chunked', 'X-Iinfo': '14-19873893-19873909 NNYN CT(86 87 0) RT(1743577992515 158) q(0 0 1 -1) r(6 6) U6'}
+INFO 2025-04-02 07:13:13,312 client 100213 139817399748288 Raw response body: {
+            "MerchantRequestID":"aa10-4361-b7cd-2aa0e34ed7e466791",
+            "CheckoutRequestID":"ws_CO_02042025101449512111304249",
+            "ResponseCode": "0",
+            "ResponseDescription":"Success. Request accepted for processing",
+            "CustomerMessage":"Success. Request accepted for processing"
+        }
+        
+INFO 2025-04-02 07:13:13,313 client 100213 139817399748288 STK push initiated successfully. CheckoutRequestID: ws_CO_02042025101449512111304249
+ERROR 2025-04-02 07:13:13,413 views 100213 139817399748288 Unexpected error during payment: table wifi_auth_paymenttransaction has no column named created_at
+INFO 2025-04-02 07:14:02,629 client 100213 139817399748288 Initialized M-Pesa client with base URL: https://sandbox.safaricom.co.ke
+INFO 2025-04-02 07:14:02,631 client 100213 139817399748288 Business Short Code: 174379
+INFO 2025-04-02 07:14:02,631 client 100213 139817399748288 Callback URL: https://yourdomain.com/payment-callback/
+INFO 2025-04-02 07:14:02,631 views 100213 139817399748288 Initiating STK push: Phone=254111304249, Amount=5, Duration=0.5hrs
+INFO 2025-04-02 07:14:02,631 client 100213 139817399748288 Initiating STK push for phone: 254111304249, amount: 5
+INFO 2025-04-02 07:14:02,631 client 100213 139817399748288 Requesting access token from M-Pesa API
+INFO 2025-04-02 07:14:03,629 client 100213 139817399748288 Successfully obtained access token
+INFO 2025-04-02 07:14:03,633 client 100213 139817399748288 Sending STK push request with payload: {"BusinessShortCode": "174379", "Password": "MTc0Mzc5YmZiMjc5ZjlhYTliZGJjZjE1OGU5N2RkNzFhNDY3Y2QyZTBjODkzMDU5YjEwZjc4ZTZiNzJhZGExZWQyYzkxOTIwMjUwNDAyMDcxNDAz", "Timestamp": "20250402071403", "TransactionType": "CustomerPayBillOnline", "Amount": 5, "PartyA": "254111304249", "PartyB": "174379", "PhoneNumber": "254111304249", "CallBackURL": "https://yourdomain.com/payment-callback/", "AccountReference": "WIFI-VUVYLUBZ", "TransactionDesc": "WIFI voucher 0.5hrs"}
+INFO 2025-04-02 07:14:04,858 client 100213 139817399748288 Raw response status: 200
+INFO 2025-04-02 07:14:04,858 client 100213 139817399748288 Raw response headers: {'content-type': 'application/json;charset=UTF-8', 'cache-control': 'no-store', 'x-request-id': '839cd523-ca27-4392-94b7-55a34061722b', 'date': 'Wed, 02 Apr 2025 07:14:04 GMT', 'Set-Cookie': 'visid_incap_2742146=lAg+sYrzRlGMo9RRnYS4dbvj7GcAAAAAQUIPAAAAAAAEzqRAX7/EJ8Jb6El2NDsC; expires=Wed, 01 Apr 2026 17:15:18 GMT; HttpOnly; path=/; Domain=.safaricom.co.ke; Secure; SameSite=None, incap_ses_6552_2742146=a0lXT1aKpjSKtpQlemHtWrvj7GcAAAAAyNc8vabk1Vy1/8upH9gqKA==; path=/; Domain=.safaricom.co.ke; Secure; SameSite=None', 'Strict-Transport-Security': 'max-age=31536000', 'X-CDN': 'Imperva', 'Content-Encoding': 'gzip', 'Transfer-Encoding': 'chunked', 'X-Iinfo': '18-58849965-58849995 NNYN CT(97 87 0) RT(1743578043772 131) q(0 0 2 -1) r(6 6) U6'}
+INFO 2025-04-02 07:14:04,859 client 100213 139817399748288 Raw response body: {
+            "MerchantRequestID":"aa10-4361-b7cd-2aa0e34ed7e466801",
+            "CheckoutRequestID":"ws_CO_02042025101540749111304249",
+            "ResponseCode": "0",
+            "ResponseDescription":"Success. Request accepted for processing",
+            "CustomerMessage":"Success. Request accepted for processing"
+        }
+        
+INFO 2025-04-02 07:14:04,859 client 100213 139817399748288 STK push initiated successfully. CheckoutRequestID: ws_CO_02042025101540749111304249
+ERROR 2025-04-02 07:14:04,970 views 100213 139817399748288 Unexpected error during payment: table wifi_auth_paymenttransaction has no column named created_at
+INFO 2025-04-02 07:17:04,557 client 100213 139817390307008 Initialized M-Pesa client with base URL: https://sandbox.safaricom.co.ke
+INFO 2025-04-02 07:17:04,570 client 100213 139817390307008 Business Short Code: 174379
+INFO 2025-04-02 07:17:04,571 client 100213 139817390307008 Callback URL: https://yourdomain.com/payment-callback/
+INFO 2025-04-02 07:17:04,571 views 100213 139817390307008 Initiating STK push: Phone=254111304249, Amount=5, Duration=0.5hrs
+INFO 2025-04-02 07:17:04,571 client 100213 139817390307008 Initiating STK push for phone: 254111304249, amount: 5
+INFO 2025-04-02 07:17:04,571 client 100213 139817390307008 Requesting access token from M-Pesa API
+INFO 2025-04-02 07:17:07,022 client 100213 139817390307008 Successfully obtained access token
+INFO 2025-04-02 07:17:07,032 client 100213 139817390307008 Sending STK push request with payload: {"BusinessShortCode": "174379", "Password": "MTc0Mzc5YmZiMjc5ZjlhYTliZGJjZjE1OGU5N2RkNzFhNDY3Y2QyZTBjODkzMDU5YjEwZjc4ZTZiNzJhZGExZWQyYzkxOTIwMjUwNDAyMDcxNzA3", "Timestamp": "20250402071707", "TransactionType": "CustomerPayBillOnline", "Amount": 5, "PartyA": "254111304249", "PartyB": "174379", "PhoneNumber": "254111304249", "CallBackURL": "https://yourdomain.com/payment-callback/", "AccountReference": "WIFI-DXU0H3RP", "TransactionDesc": "WIFI voucher 0.5hrs"}
+INFO 2025-04-02 07:17:08,280 client 100213 139817390307008 Raw response status: 200
+INFO 2025-04-02 07:17:08,281 client 100213 139817390307008 Raw response headers: {'content-type': 'application/json;charset=UTF-8', 'cache-control': 'no-store', 'x-request-id': '31bb852f-dee6-4741-8458-35dc17ef4df6', 'date': 'Wed, 02 Apr 2025 07:17:07 GMT', 'Set-Cookie': 'visid_incap_2742146=ZHbQ+BwqQvKa9PgznVqueHPk7GcAAAAAQUIPAAAAAAByZKAp5J/Bbe8E27VyDSeD; expires=Wed, 01 Apr 2026 17:15:19 GMT; HttpOnly; path=/; Domain=.safaricom.co.ke; Secure; SameSite=None, incap_ses_6552_2742146=CfchEJzGm2+P5JUlemHtWnPk7GcAAAAADPnEX8kV5jdbcf0uQijz4w==; path=/; Domain=.safaricom.co.ke; Secure; SameSite=None', 'Strict-Transport-Security': 'max-age=31536000', 'X-CDN': 'Imperva', 'Content-Encoding': 'gzip', 'Transfer-Encoding': 'chunked', 'X-Iinfo': '7-3643999-3644003 NNYN CT(86 87 0) RT(1743578227179 135) q(0 0 2 -1) r(6 6) U6'}
+INFO 2025-04-02 07:17:08,282 client 100213 139817390307008 Raw response body: {
+            "MerchantRequestID":"c20c-4eb8-8161-40af4f84ee3940015",
+            "CheckoutRequestID":"ws_CO_02042025101844182111304249",
+            "ResponseCode": "0",
+            "ResponseDescription":"Success. Request accepted for processing",
+            "CustomerMessage":"Success. Request accepted for processing"
+        }
+        
+INFO 2025-04-02 07:17:08,283 client 100213 139817390307008 STK push initiated successfully. CheckoutRequestID: ws_CO_02042025101844182111304249
+ERROR 2025-04-02 07:17:08,407 views 100213 139817390307008 Unexpected error during payment: table wifi_auth_paymenttransaction has no column named created_at
+INFO 2025-04-02 07:18:25,155 client 100213 139817390307008 Initialized M-Pesa client with base URL: https://sandbox.safaricom.co.ke
+INFO 2025-04-02 07:18:25,155 client 100213 139817390307008 Business Short Code: 174379
+INFO 2025-04-02 07:18:25,156 client 100213 139817390307008 Callback URL: https://yourdomain.com/payment-callback/
+INFO 2025-04-02 07:18:25,156 views 100213 139817390307008 Initiating STK push: Phone=254111304249, Amount=5, Duration=0.5hrs
+INFO 2025-04-02 07:18:25,156 client 100213 139817390307008 Initiating STK push for phone: 254111304249, amount: 5
+INFO 2025-04-02 07:18:25,156 client 100213 139817390307008 Requesting access token from M-Pesa API
+INFO 2025-04-02 07:18:26,078 client 100213 139817390307008 Successfully obtained access token
+INFO 2025-04-02 07:18:26,105 client 100213 139817390307008 Sending STK push request with payload: {"BusinessShortCode": "174379", "Password": "MTc0Mzc5YmZiMjc5ZjlhYTliZGJjZjE1OGU5N2RkNzFhNDY3Y2QyZTBjODkzMDU5YjEwZjc4ZTZiNzJhZGExZWQyYzkxOTIwMjUwNDAyMDcxODI2", "Timestamp": "20250402071826", "TransactionType": "CustomerPayBillOnline", "Amount": 5, "PartyA": "254111304249", "PartyB": "174379", "PhoneNumber": "254111304249", "CallBackURL": "https://yourdomain.com/payment-callback/", "AccountReference": "WIFI-VCW1KV8A", "TransactionDesc": "WIFI voucher 0.5hrs"}
+INFO 2025-04-02 07:18:26,922 client 100213 139817390307008 Raw response status: 200
+INFO 2025-04-02 07:18:26,923 client 100213 139817390307008 Raw response headers: {'content-type': 'application/json;charset=UTF-8', 'cache-control': 'no-store', 'x-request-id': '7d6e68b6-2577-41d3-a838-7d877686f0a4', 'date': 'Wed, 02 Apr 2025 07:18:26 GMT', 'Set-Cookie': 'visid_incap_2742146=GncG6wx/TWGMW5vb1LcSa8Lk7GcAAAAAQUIPAAAAAAA2rGnsj33WkwQrU57i/dac; expires=Wed, 01 Apr 2026 17:15:19 GMT; HttpOnly; path=/; Domain=.safaricom.co.ke; Secure; SameSite=None, incap_ses_6552_2742146=+0PQeQvPFSEfZZYlemHtWsLk7GcAAAAA3IUmDN3gOcY6dumxphzyzg==; path=/; Domain=.safaricom.co.ke; Secure; SameSite=None', 'Strict-Transport-Security': 'max-age=31536000', 'X-CDN': 'Imperva', 'Content-Encoding': 'gzip', 'Transfer-Encoding': 'chunked', 'X-Iinfo': '17-50021961-50021984 NNYN CT(85 86 0) RT(1743578306246 151) q(0 0 2 -1) r(5 5) U6'}
+INFO 2025-04-02 07:18:26,923 client 100213 139817390307008 Raw response body: {
+            "MerchantRequestID":"b54f-471d-93d9-f7f3bf3f7c0e3835613",
+            "CheckoutRequestID":"ws_CO_02042025102003231111304249",
+            "ResponseCode": "0",
+            "ResponseDescription":"Success. Request accepted for processing",
+            "CustomerMessage":"Success. Request accepted for processing"
+        }
+        
+INFO 2025-04-02 07:18:26,923 client 100213 139817390307008 STK push initiated successfully. CheckoutRequestID: ws_CO_02042025102003231111304249
+ERROR 2025-04-02 07:18:27,030 views 100213 139817390307008 Unexpected error during payment: table wifi_auth_paymenttransaction has no column named created_at
+INFO 2025-04-02 08:01:21,054 client 111511 139726713284288 Initialized M-Pesa client with base URL: https://sandbox.safaricom.co.ke
+INFO 2025-04-02 08:01:21,114 client 111511 139726713284288 Business Short Code: 174379
+INFO 2025-04-02 08:01:21,115 client 111511 139726713284288 Callback URL: https://yourdomain.com/payment-callback/
+INFO 2025-04-02 08:01:21,122 views 111511 139726713284288 Initiating STK push: Phone=254111304249, Amount=9, Duration=1hrs
+INFO 2025-04-02 08:01:21,123 client 111511 139726713284288 Initiating STK push for phone: 254111304249, amount: 9
+INFO 2025-04-02 08:01:21,127 client 111511 139726713284288 Requesting access token from M-Pesa API
+INFO 2025-04-02 08:01:23,746 client 111511 139726713284288 Successfully obtained access token
+INFO 2025-04-02 08:01:23,788 client 111511 139726713284288 Sending STK push request with payload: {"BusinessShortCode": "174379", "Password": "MTc0Mzc5YmZiMjc5ZjlhYTliZGJjZjE1OGU5N2RkNzFhNDY3Y2QyZTBjODkzMDU5YjEwZjc4ZTZiNzJhZGExZWQyYzkxOTIwMjUwNDAyMDgwMTIz", "Timestamp": "20250402080123", "TransactionType": "CustomerPayBillOnline", "Amount": 9, "PartyA": "254111304249", "PartyB": "174379", "PhoneNumber": "254111304249", "CallBackURL": "https://yourdomain.com/payment-callback/", "AccountReference": "WIFI-TV8Q2DEH", "TransactionDesc": "WIFI voucher 1hrs"}
+INFO 2025-04-02 08:01:27,283 client 111511 139726713284288 Raw response status: 200
+INFO 2025-04-02 08:01:27,291 client 111511 139726713284288 Raw response headers: {'content-type': 'application/json;charset=UTF-8', 'cache-control': 'no-store', 'x-request-id': '2f0079a4-4d16-481c-8076-eef8a1abe113', 'date': 'Wed, 02 Apr 2025 08:01:26 GMT', 'Set-Cookie': 'visid_incap_2742146=NmYDDeIYSqeupmlXxUJUDdLu7GcAAAAAQUIPAAAAAAA5477W7VwcKScfw7nPbd1p; expires=Wed, 01 Apr 2026 15:29:56 GMT; HttpOnly; path=/; Domain=.safaricom.co.ke; Secure; SameSite=None, incap_ses_6553_2742146=bTk0Kgoejm3h5fMGHu/wWtbu7GcAAAAA6rxExkmAi5cnYRuuQ4nZpA==; path=/; Domain=.safaricom.co.ke; Secure; SameSite=None', 'Strict-Transport-Security': 'max-age=31536000', 'X-CDN': 'Imperva', 'Content-Encoding': 'gzip', 'Transfer-Encoding': 'chunked', 'X-Iinfo': '16-21074961-21075163 NNYN CT(87 86 0) RT(1743580885275 1248) q(0 0 2 3) r(5 5) U6'}
+INFO 2025-04-02 08:01:27,291 client 111511 139726713284288 Raw response body: {
+            "MerchantRequestID":"aa10-4361-b7cd-2aa0e34ed7e467872",
+            "CheckoutRequestID":"ws_CO_02042025110125581111304249",
+            "ResponseCode": "0",
+            "ResponseDescription":"Success. Request accepted for processing",
+            "CustomerMessage":"Success. Request accepted for processing"
+        }
+        
+INFO 2025-04-02 08:01:27,292 client 111511 139726713284288 STK push initiated successfully. CheckoutRequestID: ws_CO_02042025110125581111304249
+ERROR 2025-04-02 08:01:27,408 views 111511 139726713284288 Unexpected error during payment: table wifi_auth_paymenttransaction has no column named created_at
+INFO 2025-04-02 08:03:11,105 client 111511 139726713284288 Initialized M-Pesa client with base URL: https://sandbox.safaricom.co.ke
+INFO 2025-04-02 08:03:11,106 client 111511 139726713284288 Business Short Code: 174379
+INFO 2025-04-02 08:03:11,106 client 111511 139726713284288 Callback URL: https://yourdomain.com/payment-callback/
+INFO 2025-04-02 08:03:11,108 views 111511 139726713284288 Initiating STK push: Phone=254111304249, Amount=9, Duration=1hrs
+INFO 2025-04-02 08:03:11,109 client 111511 139726713284288 Initiating STK push for phone: 254111304249, amount: 9
+INFO 2025-04-02 08:03:11,109 client 111511 139726713284288 Requesting access token from M-Pesa API
+INFO 2025-04-02 08:03:12,937 client 111511 139726713284288 Successfully obtained access token
+INFO 2025-04-02 08:03:12,957 client 111511 139726713284288 Sending STK push request with payload: {"BusinessShortCode": "174379", "Password": "MTc0Mzc5YmZiMjc5ZjlhYTliZGJjZjE1OGU5N2RkNzFhNDY3Y2QyZTBjODkzMDU5YjEwZjc4ZTZiNzJhZGExZWQyYzkxOTIwMjUwNDAyMDgwMzEy", "Timestamp": "20250402080312", "TransactionType": "CustomerPayBillOnline", "Amount": 9, "PartyA": "254111304249", "PartyB": "174379", "PhoneNumber": "254111304249", "CallBackURL": "https://yourdomain.com/payment-callback/", "AccountReference": "WIFI-9J1KIJW3", "TransactionDesc": "WIFI voucher 1hrs"}
+INFO 2025-04-02 08:03:14,046 client 111511 139726713284288 Raw response status: 200
+INFO 2025-04-02 08:03:14,048 client 111511 139726713284288 Raw response headers: {'content-type': 'application/json;charset=UTF-8', 'cache-control': 'no-store', 'x-request-id': '9785e745-23ff-46cb-99c1-5b36a04e9701', 'date': 'Wed, 02 Apr 2025 08:03:13 GMT', 'Set-Cookie': 'visid_incap_2742146=x4uxFtsGS8iUW8Py11Vap0Hv7GcAAAAAQUIPAAAAAACGGHlaGwIBySnuSfvXbSjW; expires=Wed, 01 Apr 2026 15:29:57 GMT; HttpOnly; path=/; Domain=.safaricom.co.ke; Secure; SameSite=None, incap_ses_6553_2742146=nmBEUoNIaB9Bo/QGHu/wWkHv7GcAAAAAzAJiNkLIfTUA/1KwumDJ4g==; path=/; Domain=.safaricom.co.ke; Secure; SameSite=None', 'Strict-Transport-Security': 'max-age=31536000', 'X-CDN': 'Imperva', 'Content-Encoding': 'gzip', 'Transfer-Encoding': 'chunked', 'X-Iinfo': '13-6546152-6546162 NNYN CT(87 87 0) RT(1743580993179 299) q(0 0 2 -1) r(5 5) U6'}
+INFO 2025-04-02 08:03:14,048 client 111511 139726713284288 Raw response body: {
+            "MerchantRequestID":"b54f-471d-93d9-f7f3bf3f7c0e3836462",
+            "CheckoutRequestID":"ws_CO_02042025110312486111304249",
+            "ResponseCode": "0",
+            "ResponseDescription":"Success. Request accepted for processing",
+            "CustomerMessage":"Success. Request accepted for processing"
+        }
+        
+INFO 2025-04-02 08:03:14,050 client 111511 139726713284288 STK push initiated successfully. CheckoutRequestID: ws_CO_02042025110312486111304249
+ERROR 2025-04-02 08:03:14,188 views 111511 139726713284288 Unexpected error during payment: table wifi_auth_paymenttransaction has no column named created_at
+INFO 2025-04-02 08:04:33,633 client 111511 139726713284288 Initialized M-Pesa client with base URL: https://sandbox.safaricom.co.ke
+INFO 2025-04-02 08:04:33,634 client 111511 139726713284288 Business Short Code: 174379
+INFO 2025-04-02 08:04:33,635 client 111511 139726713284288 Callback URL: https://yourdomain.com/payment-callback/
+INFO 2025-04-02 08:04:33,636 views 111511 139726713284288 Initiating STK push: Phone=254111304249, Amount=9, Duration=1hrs
+INFO 2025-04-02 08:04:33,639 client 111511 139726713284288 Initiating STK push for phone: 254111304249, amount: 9
+INFO 2025-04-02 08:04:33,639 client 111511 139726713284288 Requesting access token from M-Pesa API
+INFO 2025-04-02 08:04:40,040 client 111511 139726713284288 Successfully obtained access token
+INFO 2025-04-02 08:04:40,053 client 111511 139726713284288 Sending STK push request with payload: {"BusinessShortCode": "174379", "Password": "MTc0Mzc5YmZiMjc5ZjlhYTliZGJjZjE1OGU5N2RkNzFhNDY3Y2QyZTBjODkzMDU5YjEwZjc4ZTZiNzJhZGExZWQyYzkxOTIwMjUwNDAyMDgwNDQw", "Timestamp": "20250402080440", "TransactionType": "CustomerPayBillOnline", "Amount": 9, "PartyA": "254111304249", "PartyB": "174379", "PhoneNumber": "254111304249", "CallBackURL": "https://yourdomain.com/payment-callback/", "AccountReference": "WIFI-KC9TEGB5", "TransactionDesc": "WIFI voucher 1hrs"}
+INFO 2025-04-02 08:04:41,402 client 111511 139726713284288 Raw response status: 200
+INFO 2025-04-02 08:04:41,406 client 111511 139726713284288 Raw response headers: {'content-type': 'application/json;charset=UTF-8', 'cache-control': 'no-store', 'x-request-id': 'bc766b23-5b5c-4258-8283-766d2b40de1f', 'date': 'Wed, 02 Apr 2025 08:04:40 GMT', 'Set-Cookie': 'visid_incap_2742146=vNz3wbwIQ6a5QXGudgXAppjv7GcAAAAAQUIPAAAAAACrh0uClxuVK1nBIQjXJ1AQ; expires=Wed, 01 Apr 2026 15:29:57 GMT; HttpOnly; path=/; Domain=.safaricom.co.ke; Secure; SameSite=None, incap_ses_6553_2742146=vGg8GhIqPn6aPPUGHu/wWpjv7GcAAAAAcnetNivpcZN0mvhNQSWKpA==; path=/; Domain=.safaricom.co.ke; Secure; SameSite=None', 'Strict-Transport-Security': 'max-age=31536000', 'X-CDN': 'Imperva', 'Content-Encoding': 'gzip', 'Transfer-Encoding': 'chunked', 'X-Iinfo': '17-24934342-24934412 NNYN CT(87 87 0) RT(1743581080370 342) q(0 0 1 -1) r(6 6) U6'}
+INFO 2025-04-02 08:04:41,414 client 111511 139726713284288 Raw response body: {
+            "MerchantRequestID":"aa10-4361-b7cd-2aa0e34ed7e467948",
+            "CheckoutRequestID":"ws_CO_02042025110617581111304249",
+            "ResponseCode": "0",
+            "ResponseDescription":"Success. Request accepted for processing",
+            "CustomerMessage":"Success. Request accepted for processing"
+        }
+        
+INFO 2025-04-02 08:04:41,421 client 111511 139726713284288 STK push initiated successfully. CheckoutRequestID: ws_CO_02042025110617581111304249
+ERROR 2025-04-02 08:04:41,565 views 111511 139726713284288 Unexpected error during payment: table wifi_auth_paymenttransaction has no column named created_at
+INFO 2025-04-02 08:05:46,825 client 111511 139726713284288 Initialized M-Pesa client with base URL: https://sandbox.safaricom.co.ke
+INFO 2025-04-02 08:05:46,834 client 111511 139726713284288 Business Short Code: 174379
+INFO 2025-04-02 08:05:46,837 client 111511 139726713284288 Callback URL: https://yourdomain.com/payment-callback/
+INFO 2025-04-02 08:05:46,837 views 111511 139726713284288 Initiating STK push: Phone=254111304249, Amount=35, Duration=5hrs
+INFO 2025-04-02 08:05:46,849 client 111511 139726713284288 Initiating STK push for phone: 254111304249, amount: 35
+INFO 2025-04-02 08:05:46,852 client 111511 139726713284288 Requesting access token from M-Pesa API
+INFO 2025-04-02 08:05:48,083 client 111511 139726713284288 Successfully obtained access token
+INFO 2025-04-02 08:05:48,123 client 111511 139726713284288 Sending STK push request with payload: {"BusinessShortCode": "174379", "Password": "MTc0Mzc5YmZiMjc5ZjlhYTliZGJjZjE1OGU5N2RkNzFhNDY3Y2QyZTBjODkzMDU5YjEwZjc4ZTZiNzJhZGExZWQyYzkxOTIwMjUwNDAyMDgwNTQ4", "Timestamp": "20250402080548", "TransactionType": "CustomerPayBillOnline", "Amount": 35, "PartyA": "254111304249", "PartyB": "174379", "PhoneNumber": "254111304249", "CallBackURL": "https://yourdomain.com/payment-callback/", "AccountReference": "WIFI-OB9ZL42F", "TransactionDesc": "WIFI voucher 5hrs"}
+INFO 2025-04-02 08:05:51,101 client 111511 139726713284288 Raw response status: 200
+INFO 2025-04-02 08:05:51,103 client 111511 139726713284288 Raw response headers: {'content-type': 'application/json;charset=UTF-8', 'cache-control': 'no-store', 'x-request-id': '623e1529-f216-46e8-b7e5-d47269ba40ec', 'date': 'Wed, 02 Apr 2025 08:05:50 GMT', 'Set-Cookie': 'visid_incap_2742146=dNUln46dTlyPPDvcJVzo2N7v7GcAAAAAQUIPAAAAAACprnHmvTDdmhaQYP1/gK8a; expires=Wed, 01 Apr 2026 15:29:56 GMT; HttpOnly; path=/; Domain=.safaricom.co.ke; Secure; SameSite=None, incap_ses_6553_2742146=qgT2AKrgshWrs/UGHu/wWt7v7GcAAAAAOaJtM0pyOnenJuUiSgpdRA==; path=/; Domain=.safaricom.co.ke; Secure; SameSite=None', 'Strict-Transport-Security': 'max-age=31536000', 'X-CDN': 'Imperva', 'Content-Encoding': 'gzip', 'Transfer-Encoding': 'chunked', 'X-Iinfo': '16-21113196-21113310 NNYN CT(86 87 0) RT(1743581149493 1065) q(0 0 2 -1) r(5 5) U6'}
+INFO 2025-04-02 08:05:51,103 client 111511 139726713284288 Raw response body: {
+            "MerchantRequestID":"b54f-471d-93d9-f7f3bf3f7c0e3836513",
+            "CheckoutRequestID":"ws_CO_02042025110727398111304249",
+            "ResponseCode": "0",
+            "ResponseDescription":"Success. Request accepted for processing",
+            "CustomerMessage":"Success. Request accepted for processing"
+        }
+        
+INFO 2025-04-02 08:05:51,104 client 111511 139726713284288 STK push initiated successfully. CheckoutRequestID: ws_CO_02042025110727398111304249
+ERROR 2025-04-02 08:05:51,238 views 111511 139726713284288 Unexpected error during payment: table wifi_auth_paymenttransaction has no column named created_at
+INFO 2025-04-02 08:18:44,045 client 115371 140406882961088 Initialized M-Pesa client with base URL: https://sandbox.safaricom.co.ke
+INFO 2025-04-02 08:18:44,105 client 115371 140406882961088 Business Short Code: 174379
+INFO 2025-04-02 08:18:44,105 client 115371 140406882961088 Callback URL: https://yourdomain.com/payment-callback/
+INFO 2025-04-02 08:18:44,105 views 115371 140406882961088 Initiating STK push: Phone=254111304249, Amount=5, Duration=0.5hrs
+INFO 2025-04-02 08:18:44,106 client 115371 140406882961088 Initiating STK push for phone: 254111304249, amount: 5
+INFO 2025-04-02 08:18:44,106 client 115371 140406882961088 Requesting access token from M-Pesa API
+INFO 2025-04-02 08:18:46,013 client 115371 140406882961088 Successfully obtained access token
+INFO 2025-04-02 08:18:46,014 client 115371 140406882961088 Sending STK push request with payload: {"BusinessShortCode": "174379", "Password": "MTc0Mzc5YmZiMjc5ZjlhYTliZGJjZjE1OGU5N2RkNzFhNDY3Y2QyZTBjODkzMDU5YjEwZjc4ZTZiNzJhZGExZWQyYzkxOTIwMjUwNDAyMDgxODQ2", "Timestamp": "20250402081846", "TransactionType": "CustomerPayBillOnline", "Amount": 5, "PartyA": "254111304249", "PartyB": "174379", "PhoneNumber": "254111304249", "CallBackURL": "https://yourdomain.com/payment-callback/", "AccountReference": "WIFI-11A5I1BZ", "TransactionDesc": "WIFI voucher 0.5hrs"}
+INFO 2025-04-02 08:18:52,338 client 115371 140406882961088 Raw response status: 200
+INFO 2025-04-02 08:18:52,339 client 115371 140406882961088 Raw response headers: {'content-type': 'application/json;charset=UTF-8', 'cache-control': 'no-store', 'x-request-id': '37abf942-df00-438b-965f-0c558e6c1d9e', 'date': 'Wed, 02 Apr 2025 08:18:51 GMT', 'Set-Cookie': 'visid_incap_2742146=ulHssCNiRBaRu8AdA6vK7OXy7GcAAAAAQUIPAAAAAABLZJJ/wONafekOvq8jV9nT; expires=Wed, 01 Apr 2026 15:29:56 GMT; HttpOnly; path=/; Domain=.safaricom.co.ke; Secure; SameSite=None, incap_ses_6553_2742146=HXOTSkejeXf60foGHu/wWuvy7GcAAAAAlACbMjnNun+WxUNZcgQEnA==; path=/; Domain=.safaricom.co.ke; Secure; SameSite=None', 'Strict-Transport-Security': 'max-age=31536000', 'X-CDN': 'Imperva', 'Content-Encoding': 'gzip', 'Transfer-Encoding': 'chunked', 'X-Iinfo': '16-21226769-21226786 NNYN CT(87 86 0) RT(1743581931352 324) q(0 0 2 15) r(6 6) U6'}
+INFO 2025-04-02 08:18:52,339 client 115371 140406882961088 Raw response body: {
+            "MerchantRequestID":"f6d6-4b6d-9f75-1a54a0b818ca43744",
+            "CheckoutRequestID":"ws_CO_02042025111850699111304249",
+            "ResponseCode": "0",
+            "ResponseDescription":"Success. Request accepted for processing",
+            "CustomerMessage":"Success. Request accepted for processing"
+        }
+        
+INFO 2025-04-02 08:18:52,339 client 115371 140406882961088 STK push initiated successfully. CheckoutRequestID: ws_CO_02042025111850699111304249
+ERROR 2025-04-02 08:18:52,439 views 115371 140406882961088 Unexpected error during payment: table wifi_auth_paymenttransaction has no column named created_at
+INFO 2025-04-02 08:57:46,228 client 120113 140010024801984 Initialized M-Pesa client with base URL: https://sandbox.safaricom.co.ke
+INFO 2025-04-02 08:57:46,292 client 120113 140010024801984 Business Short Code: 174379
+INFO 2025-04-02 08:57:46,293 client 120113 140010024801984 Callback URL: https://yourdomain.com/payment-callback/
+INFO 2025-04-02 08:57:46,294 views 120113 140010024801984 Initiating STK push: Phone=254111304249, Amount=5, Duration=0.5hrs
+INFO 2025-04-02 08:57:46,294 client 120113 140010024801984 Initiating STK push for phone: 254111304249, amount: 5
+INFO 2025-04-02 08:57:46,295 client 120113 140010024801984 Requesting access token from M-Pesa API
+INFO 2025-04-02 08:57:48,497 client 120113 140010024801984 Successfully obtained access token
+INFO 2025-04-02 08:57:48,499 client 120113 140010024801984 Sending STK push request with payload: {"BusinessShortCode": "174379", "Password": "MTc0Mzc5YmZiMjc5ZjlhYTliZGJjZjE1OGU5N2RkNzFhNDY3Y2QyZTBjODkzMDU5YjEwZjc4ZTZiNzJhZGExZWQyYzkxOTIwMjUwNDAyMDg1NzQ4", "Timestamp": "20250402085748", "TransactionType": "CustomerPayBillOnline", "Amount": 5, "PartyA": "254111304249", "PartyB": "174379", "PhoneNumber": "254111304249", "CallBackURL": "https://yourdomain.com/payment-callback/", "AccountReference": "WIFI-TDQ8TLH7", "TransactionDesc": "WIFI voucher 0.5hrs"}
+INFO 2025-04-02 08:57:49,754 client 120113 140010024801984 Raw response status: 200
+INFO 2025-04-02 08:57:49,755 client 120113 140010024801984 Raw response headers: {'content-type': 'application/json;charset=UTF-8', 'cache-control': 'no-store', 'x-request-id': '6adbc4ff-e817-48e8-babc-e70fb54df77e', 'date': 'Wed, 02 Apr 2025 08:57:49 GMT', 'Set-Cookie': 'visid_incap_2742146=i94bqurCRS65OjaUuWMZtQv87GcAAAAAQUIPAAAAAAAzFc8kRH1wFTWt9+hx0bUy; expires=Wed, 01 Apr 2026 15:29:58 GMT; HttpOnly; path=/; Domain=.safaricom.co.ke; Secure; SameSite=None, incap_ses_6553_2742146=eJ4qZxkhcgg0MQsHHu/wWg387GcAAAAALKC3X5W0E7sPtuja6EA7Vw==; path=/; Domain=.safaricom.co.ke; Secure; SameSite=None', 'Strict-Transport-Security': 'max-age=31536000', 'X-CDN': 'Imperva', 'Content-Encoding': 'gzip', 'Transfer-Encoding': 'chunked', 'X-Iinfo': '3-1324296-1324298 NNYN CT(86 87 0) RT(1743584268696 117) q(0 0 1 0) r(9 9) U6'}
+INFO 2025-04-02 08:57:49,756 client 120113 140010024801984 Raw response body: {
+            "MerchantRequestID":"8131-4f68-ab7a-5e68879d780e264807",
+            "CheckoutRequestID":"ws_CO_02042025115925685111304249",
+            "ResponseCode": "0",
+            "ResponseDescription":"Success. Request accepted for processing",
+            "CustomerMessage":"Success. Request accepted for processing"
+        }
+        
+INFO 2025-04-02 08:57:49,758 client 120113 140010024801984 STK push initiated successfully. CheckoutRequestID: ws_CO_02042025115925685111304249
+ERROR 2025-04-02 08:57:49,845 views 120113 140010024801984 Unexpected error during payment: table wifi_auth_paymenttransaction has no column named created_at
+INFO 2025-04-02 08:57:59,563 client 120113 140010024801984 Initialized M-Pesa client with base URL: https://sandbox.safaricom.co.ke
+INFO 2025-04-02 08:57:59,564 client 120113 140010024801984 Business Short Code: 174379
+INFO 2025-04-02 08:57:59,564 client 120113 140010024801984 Callback URL: https://yourdomain.com/payment-callback/
+INFO 2025-04-02 08:57:59,564 views 120113 140010024801984 Initiating STK push: Phone=254111304249, Amount=5, Duration=0.5hrs
+INFO 2025-04-02 08:57:59,564 client 120113 140010024801984 Initiating STK push for phone: 254111304249, amount: 5
+INFO 2025-04-02 08:57:59,564 client 120113 140010024801984 Requesting access token from M-Pesa API
+INFO 2025-04-02 08:58:00,509 client 120113 140010024801984 Successfully obtained access token
+INFO 2025-04-02 08:58:00,512 client 120113 140010024801984 Sending STK push request with payload: {"BusinessShortCode": "174379", "Password": "MTc0Mzc5YmZiMjc5ZjlhYTliZGJjZjE1OGU5N2RkNzFhNDY3Y2QyZTBjODkzMDU5YjEwZjc4ZTZiNzJhZGExZWQyYzkxOTIwMjUwNDAyMDg1ODAw", "Timestamp": "20250402085800", "TransactionType": "CustomerPayBillOnline", "Amount": 5, "PartyA": "254111304249", "PartyB": "174379", "PhoneNumber": "254111304249", "CallBackURL": "https://yourdomain.com/payment-callback/", "AccountReference": "WIFI-ITJV42H2", "TransactionDesc": "WIFI voucher 0.5hrs"}
+INFO 2025-04-02 08:58:01,214 client 120113 140010024801984 Raw response status: 500
+INFO 2025-04-02 08:58:01,215 client 120113 140010024801984 Raw response headers: {'content-type': 'application/json;charset=UTF-8', 'cache-control': 'no-store', 'x-request-id': '165e1c0d-6542-4cda-a4af-f3dd39c3aaa5', 'date': 'Wed, 02 Apr 2025 08:58:00 GMT', 'Set-Cookie': 'visid_incap_2742146=/TCOMYL3TTy8Mai1Lx/+FRj87GcAAAAAQUIPAAAAAADpVNEPVbq2ozElQgoqp1lR; expires=Wed, 01 Apr 2026 15:29:57 GMT; HttpOnly; path=/; Domain=.safaricom.co.ke; Secure; SameSite=None, incap_ses_6553_2742146=I4bqSthCXQdfRwsHHu/wWhj87GcAAAAAQQwEoRnMWoEchj7+LwfMZQ==; path=/; Domain=.safaricom.co.ke; Secure; SameSite=None', 'Strict-Transport-Security': 'max-age=31536000', 'X-CDN': 'Imperva', 'Content-Encoding': 'gzip', 'Transfer-Encoding': 'chunked', 'X-Iinfo': '18-29214539-29214571 NNYN CT(91 87 0) RT(1743584280726 106) q(0 0 2 -1) r(3 3) U6'}
+INFO 2025-04-02 08:58:01,215 client 120113 140010024801984 Raw response body: {
+                    "requestId":"8131-4f68-ab7a-5e68879d780e264814",
+                    "errorCode": "500.001.1001",
+                    "errorMessage": "Unable to lock subscriber, a transaction is already in process for the current subscriber"
+                }
+            
+ERROR 2025-04-02 08:58:01,215 client 120113 140010024801984 Network error in STK push: 500 Server Error: Internal Server Error for url: https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest
+ERROR 2025-04-02 08:58:01,319 views 120113 140010024801984 Unexpected error during payment: Failed to connect to M-Pesa API. Please check your internet connection.
+INFO 2025-04-02 09:06:07,902 client 121136 140525340956352 Initialized M-Pesa client with base URL: https://sandbox.safaricom.co.ke
+INFO 2025-04-02 09:06:07,949 client 121136 140525340956352 Business Short Code: 174379
+INFO 2025-04-02 09:06:07,950 client 121136 140525340956352 Callback URL: https://yourdomain.com/payment-callback/
+INFO 2025-04-02 09:06:07,950 views 121136 140525340956352 Initiating STK push: Phone=254111304249, Amount=5, Duration=0.5hrs
+INFO 2025-04-02 09:06:07,950 client 121136 140525340956352 Initiating STK push for phone: 254111304249, amount: 5
+INFO 2025-04-02 09:06:07,951 client 121136 140525340956352 Requesting access token from M-Pesa API
+INFO 2025-04-02 09:06:16,368 client 121136 140525340956352 Successfully obtained access token
+INFO 2025-04-02 09:06:16,369 client 121136 140525340956352 Sending STK push request with payload: {"BusinessShortCode": "174379", "Password": "MTc0Mzc5YmZiMjc5ZjlhYTliZGJjZjE1OGU5N2RkNzFhNDY3Y2QyZTBjODkzMDU5YjEwZjc4ZTZiNzJhZGExZWQyYzkxOTIwMjUwNDAyMDkwNjE2", "Timestamp": "20250402090616", "TransactionType": "CustomerPayBillOnline", "Amount": 5, "PartyA": "254111304249", "PartyB": "174379", "PhoneNumber": "254111304249", "CallBackURL": "https://yourdomain.com/payment-callback/", "AccountReference": "WIFI-Z5EIWW7F", "TransactionDesc": "WIFI voucher 0.5hrs"}
+INFO 2025-04-02 09:06:23,316 client 121136 140525340956352 Raw response status: 200
+INFO 2025-04-02 09:06:23,316 client 121136 140525340956352 Raw response headers: {'content-type': 'application/json;charset=UTF-8', 'cache-control': 'no-store', 'x-request-id': 'f3bfaa0b-d5ef-4153-bc68-2a2528e48bfc', 'date': 'Wed, 02 Apr 2025 09:06:22 GMT', 'Set-Cookie': 'visid_incap_2742146=rWy4w5c/SESUQAuWozINAw7+7GcAAAAAQUIPAAAAAAAsZsactJdPOoVYxTgM4oRm; expires=Wed, 01 Apr 2026 15:29:57 GMT; HttpOnly; path=/; Domain=.safaricom.co.ke; Secure; SameSite=None, incap_ses_6553_2742146=nfe/JZ0EuTbbxg4HHu/wWg7+7GcAAAAAO4ZNB3Y2FTI0H9diJT7B3g==; path=/; Domain=.safaricom.co.ke; Secure; SameSite=None', 'Strict-Transport-Security': 'max-age=31536000', 'X-CDN': 'Imperva', 'Content-Encoding': 'gzip', 'Transfer-Encoding': 'chunked', 'X-Iinfo': '18-29309368-29310318 NNYN CT(183 191 0) RT(1743584777216 5010) q(0 0 4 -1) r(10 10) U6'}
+INFO 2025-04-02 09:06:23,316 client 121136 140525340956352 Raw response body: {
+            "MerchantRequestID":"aa10-4361-b7cd-2aa0e34ed7e469627",
+            "CheckoutRequestID":"ws_CO_02042025120621367111304249",
+            "ResponseCode": "0",
+            "ResponseDescription":"Success. Request accepted for processing",
+            "CustomerMessage":"Success. Request accepted for processing"
+        }
+        
+INFO 2025-04-02 09:06:23,316 client 121136 140525340956352 STK push initiated successfully. CheckoutRequestID: ws_CO_02042025120621367111304249
+ERROR 2025-04-02 09:06:23,409 views 121136 140525340956352 Unexpected error during payment: table wifi_auth_paymenttransaction has no column named created_at
+INFO 2025-04-02 20:36:24,217 client 161548 140280621385408 Initialized M-Pesa client with base URL: https://sandbox.safaricom.co.ke
+INFO 2025-04-02 20:36:24,382 client 161548 140280621385408 Business Short Code: 174379
+INFO 2025-04-02 20:36:24,383 client 161548 140280621385408 Callback URL: https://yourdomain.com/payment-callback/
+INFO 2025-04-02 20:36:24,383 views 161548 140280621385408 Initiating STK push: Phone=254111304249, Amount=5, Duration=0.5hrs
+INFO 2025-04-02 20:36:24,386 client 161548 140280621385408 Initiating STK push for phone: 254111304249, amount: 5
+INFO 2025-04-02 20:36:24,386 client 161548 140280621385408 Requesting access token from M-Pesa API
+INFO 2025-04-02 20:36:29,491 client 161548 140280621385408 Successfully obtained access token
+INFO 2025-04-02 20:36:29,499 client 161548 140280621385408 Sending STK push request with payload: {"BusinessShortCode": "174379", "Password": "MTc0Mzc5YmZiMjc5ZjlhYTliZGJjZjE1OGU5N2RkNzFhNDY3Y2QyZTBjODkzMDU5YjEwZjc4ZTZiNzJhZGExZWQyYzkxOTIwMjUwNDAyMjAzNjI5", "Timestamp": "20250402203629", "TransactionType": "CustomerPayBillOnline", "Amount": 5, "PartyA": "254111304249", "PartyB": "174379", "PhoneNumber": "254111304249", "CallBackURL": "https://yourdomain.com/payment-callback/", "AccountReference": "WIFI-D6S6TBCI", "TransactionDesc": "WIFI voucher 0.5hrs"}
+INFO 2025-04-02 20:36:31,244 client 161548 140280621385408 Raw response status: 200
+INFO 2025-04-02 20:36:31,244 client 161548 140280621385408 Raw response headers: {'content-type': 'application/json;charset=UTF-8', 'cache-control': 'no-store', 'x-request-id': '178f7839-760b-4164-aaef-e1ec99299d04', 'date': 'Wed, 02 Apr 2025 20:36:30 GMT', 'Set-Cookie': 'visid_incap_2742146=/0bdOoUWRImsibNULkiUwsyf7WcAAAAAQUIPAAAAAADTRj7YguX8kTeMMpVkezdj; expires=Thu, 02 Apr 2026 17:15:19 GMT; HttpOnly; path=/; Domain=.safaricom.co.ke; Secure; SameSite=None, incap_ses_6552_2742146=esyEdbhRPwSg3ecmemHtWs6f7WcAAAAAxJZJtBjURJmo9N5dFFng8g==; path=/; Domain=.safaricom.co.ke; Secure; SameSite=None', 'Strict-Transport-Security': 'max-age=31536000', 'X-CDN': 'Imperva', 'Content-Encoding': 'gzip', 'Transfer-Encoding': 'chunked', 'X-Iinfo': '15-35243042-35243045 NNYN CT(80 82 0) RT(1743626190168 151) q(0 0 2 0) r(5 5) U6'}
+INFO 2025-04-02 20:36:31,245 client 161548 140280621385408 Raw response body: {
+            "MerchantRequestID":"c20c-4eb8-8161-40af4f84ee3960461",
+            "CheckoutRequestID":"ws_CO_02042025233807410111304249",
+            "ResponseCode": "0",
+            "ResponseDescription":"Success. Request accepted for processing",
+            "CustomerMessage":"Success. Request accepted for processing"
+        }
+        
+INFO 2025-04-02 20:36:31,245 client 161548 140280621385408 STK push initiated successfully. CheckoutRequestID: ws_CO_02042025233807410111304249
+ERROR 2025-04-02 20:36:31,697 views 161548 140280621385408 Unexpected error during payment: table wifi_auth_paymenttransaction has no column named created_at
+INFO 2025-04-02 20:36:45,400 client 161548 140280621385408 Initialized M-Pesa client with base URL: https://sandbox.safaricom.co.ke
+INFO 2025-04-02 20:36:45,401 client 161548 140280621385408 Business Short Code: 174379
+INFO 2025-04-02 20:36:45,401 client 161548 140280621385408 Callback URL: https://yourdomain.com/payment-callback/
+INFO 2025-04-02 20:36:45,402 views 161548 140280621385408 Initiating STK push: Phone=254111304249, Amount=5, Duration=0.5hrs
+INFO 2025-04-02 20:36:45,402 client 161548 140280621385408 Initiating STK push for phone: 254111304249, amount: 5
+INFO 2025-04-02 20:36:45,403 client 161548 140280621385408 Requesting access token from M-Pesa API
+INFO 2025-04-02 20:36:46,124 client 161548 140280621385408 Successfully obtained access token
+INFO 2025-04-02 20:36:46,131 client 161548 140280621385408 Sending STK push request with payload: {"BusinessShortCode": "174379", "Password": "MTc0Mzc5YmZiMjc5ZjlhYTliZGJjZjE1OGU5N2RkNzFhNDY3Y2QyZTBjODkzMDU5YjEwZjc4ZTZiNzJhZGExZWQyYzkxOTIwMjUwNDAyMjAzNjQ2", "Timestamp": "20250402203646", "TransactionType": "CustomerPayBillOnline", "Amount": 5, "PartyA": "254111304249", "PartyB": "174379", "PhoneNumber": "254111304249", "CallBackURL": "https://yourdomain.com/payment-callback/", "AccountReference": "WIFI-QHILSI1D", "TransactionDesc": "WIFI voucher 0.5hrs"}
+INFO 2025-04-02 20:36:47,130 client 161548 140280621385408 Raw response status: 200
+INFO 2025-04-02 20:36:47,132 client 161548 140280621385408 Raw response headers: {'content-type': 'application/json;charset=UTF-8', 'cache-control': 'no-store', 'x-request-id': 'f2f44512-e68b-433f-8b88-46f2da3ce10e', 'date': 'Wed, 02 Apr 2025 20:36:46 GMT', 'Set-Cookie': 'visid_incap_2742146=7PY5SGniRIi6N9ZXZCdA2t6f7WcAAAAAQUIPAAAAAAATVQhO3gwablGUvdAeC3xJ; expires=Thu, 02 Apr 2026 17:15:19 GMT; HttpOnly; path=/; Domain=.safaricom.co.ke; Secure; SameSite=None, incap_ses_6552_2742146=5NdBIG0AokPy7ecmemHtWt6f7WcAAAAALkuy76rCNS2QpNJMjVPewQ==; path=/; Domain=.safaricom.co.ke; Secure; SameSite=None', 'Strict-Transport-Security': 'max-age=31536000', 'X-CDN': 'Imperva', 'Content-Encoding': 'gzip', 'Transfer-Encoding': 'chunked', 'X-Iinfo': '18-67691510-67691529 NNYN CT(83 84 0) RT(1743626206426 146) q(0 0 1 -1) r(5 5) U6'}
+INFO 2025-04-02 20:36:47,133 client 161548 140280621385408 Raw response body: {
+            "MerchantRequestID":"f6d6-4b6d-9f75-1a54a0b818ca62574",
+            "CheckoutRequestID":"ws_CO_02042025233646843111304249",
+            "ResponseCode": "0",
+            "ResponseDescription":"Success. Request accepted for processing",
+            "CustomerMessage":"Success. Request accepted for processing"
+        }
+        
+INFO 2025-04-02 20:36:47,135 client 161548 140280621385408 STK push initiated successfully. CheckoutRequestID: ws_CO_02042025233646843111304249
+ERROR 2025-04-02 20:36:47,342 views 161548 140280621385408 Unexpected error during payment: table wifi_auth_paymenttransaction has no column named created_at

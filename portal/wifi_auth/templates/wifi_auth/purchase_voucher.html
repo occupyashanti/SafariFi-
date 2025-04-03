@@ -223,30 +223,66 @@
             body: formData,
             headers: {
                 'X-Requested-With': 'XMLHttpRequest',
+                'X-CSRFToken': formData.get('csrfmiddlewaretoken')
             },
         })
         .then(response => {
-            // Check if the response is JSON
-            const contentType = response.headers.get('content-type');
-            if (contentType && contentType.includes('application/json')) {
-                return response.json();
-            } else {
-                throw new Error('Server returned non-JSON response: ' + response.status);
+            // First check if the response is ok
+            if (!response.ok) {
+                return response.json().then(err => {
+                    throw new Error(err.message || 'Payment failed. Please try again.');
+                });
             }
+            return response.json();
         })
         .then(data => {
             if (data.status === 'success') {
-                alert('Payment initiated! Check your phone to complete the transaction.');
-                window.location.href = "{% url 'wifi_dashboard' %}";
+                // Remove any existing error messages
+                const existingAlerts = document.querySelectorAll('.alert');
+                existingAlerts.forEach(alert => alert.remove());
+                
+                // Show success message in a nicer way
+                const message = document.createElement('div');
+                message.className = 'alert alert-success mt-3';
+                message.innerHTML = `
+                    <h5><i class="fas fa-check-circle me-2"></i>Payment Initiated!</h5>
+                    <p class="mb-0">${data.message}</p>
+                `;
+                this.insertAdjacentElement('beforebegin', message);
+                
+                // Redirect after a short delay
+                setTimeout(() => {
+                    window.location.href = "{% url 'wifi_dashboard' %}";
+                }, 3000);
             } else {
-                alert('Error: ' + data.message);
-                payBtn.disabled = false;
-                payBtn.innerHTML = 'Pay via M-Pesa';
+                throw new Error(data.message || 'Payment failed. Please try again.');
             }
         })
         .catch(error => {
             console.error('Error:', error);
-            alert('An error occurred. Please try again.');
+            
+            // Remove any existing messages
+            const existingAlerts = document.querySelectorAll('.alert');
+            existingAlerts.forEach(alert => alert.remove());
+            
+            // Show error message in a nicer way
+            const message = document.createElement('div');
+            message.className = 'alert alert-danger mt-3';
+            message.innerHTML = `
+                <h5><i class="fas fa-exclamation-circle me-2"></i>Error</h5>
+                <p class="mb-0">${error.message}</p>
+            `;
+            this.insertAdjacentElement('beforebegin', message);
+            
+            // Reset button state
+            payBtn.disabled = false;
+            payBtn.innerHTML = 'Pay via M-Pesa';
+            
+            // Remove error message after 5 seconds
+            setTimeout(() => message.remove(), 5000);
+        })
+        .finally(() => {
+            // Always reset button state
             payBtn.disabled = false;
             payBtn.innerHTML = 'Pay via M-Pesa';
         });

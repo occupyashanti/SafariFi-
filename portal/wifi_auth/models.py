@@ -42,13 +42,17 @@ class Voucher(models.Model):
 
 class PaymentTransaction(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    voucher = models.ForeignKey(Voucher, on_delete=models.SET_NULL, null=True, blank=True)
+    voucher = models.OneToOneField('Voucher', on_delete=models.SET_NULL, null=True)
     amount = models.DecimalField(max_digits=10, decimal_places=2)
-    mpesa_receipt = models.CharField(max_length=50, null=True, blank=True)
     phone_number = models.CharField(max_length=15)
-    transaction_date = models.DateTimeField(auto_now_add=True)
+    mpesa_receipt = models.CharField(max_length=50, unique=True)
     is_completed = models.BooleanField(default=False)
-    response_data = models.TextField(null=True, blank=True, help_text='Raw response data from M-Pesa API')
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    response_data = models.TextField(null=True, blank=True, help_text="Stores the M-Pesa callback response data")
 
     def __str__(self):
-        return f"Payment {self.mpesa_receipt or 'pending'}"
+        return f"Payment of {self.amount} by {self.user.username} - {'Completed' if self.is_completed else 'Pending'}"
+
+    class Meta:
+        ordering = ['-created_at']
