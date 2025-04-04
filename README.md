@@ -72,7 +72,3 @@ For the M-Pesa integration to work properly:
 1. Register for Safaricom Daraja API access
 2. Configure the callback URL to point to your server
 3. For local testing, use a tool like ngrok to expose your local server
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
