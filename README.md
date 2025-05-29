@@ -1,4 +1,4 @@
-# SafariFi
+# SafariFi-
 
 A Django-based captive portal for WiFi hotspots with M-Pesa integration for payment processing.
 
