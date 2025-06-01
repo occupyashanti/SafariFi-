@@ -61,3 +61,16 @@ source venv/bin/activate
 
 # Install dependencies
 pip install -r requirements.txt
+---
+
+2. Configure Environment Variables
+
+# Copy the example env file
+cp mpesa.env.example .env
+
+> Fill in .env with your M-Pesa credentials, Django settings, and callback URLs.
+
+
+
+
+---
