@@ -1,6 +1,17 @@
-# SafariFi
+#  SafariFi
 
-**SafariFi** is a Django-based captive portal system designed for WiFi hotspot providers. It integrates seamlessly with **M-Pesa** (via Safaricom's Daraja API) to allow users to purchase internet access through mobile payments.
+> A Django-based captive portal for WiFi hotspots with M-Pesa payment integration.
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Python Version](https://img.shields.io/badge/python-3.8%2B-blue.svg)](https://www.python.org/)
+[![Django](https://img.shields.io/badge/Django-4.x-success.svg)](https://www.djangoproject.com/)
+[![M-Pesa Integration](https://img.shields.io/badge/M--Pesa-Daraja--API-orange.svg)](https://developer.safaricom.co.ke/)
+[![Made in Kenya](https://img.shields.io/badge/Made%20in-Kenya-black.svg?logo=flag&logoColor=white)](https://github.com/yourusername/safarifi)
+
+---
+
+SafariFi lets you monetize WiFi access by redirecting users to a login and payment portal when they connect to your hotspot. Built with Django and integrated with Safaricom’s Daraja API, it provides a simple and secure way to sell internet access using M-Pesa payments.
+
 
 ---
 
