@@ -6,7 +6,7 @@
 [![Python Version](https://img.shields.io/badge/python-3.8%2B-blue.svg)](https://www.python.org/)
 [![Django](https://img.shields.io/badge/Django-4.x-success.svg)](https://www.djangoproject.com/)
 [![M-Pesa Integration](https://img.shields.io/badge/M--Pesa-Daraja--API-orange.svg)](https://developer.safaricom.co.ke/)
-[![Made in Kenya](https://img.shields.io/badge/Made%20in-Kenya-black.svg?logo=flag&logoColor=white)](https://github.com/yourusername/safarifi)
+[![Made in Kenya](https://img.shields.io/badge/Made%20in-Kenya-black.svg?logo=flag&logoColor=white)](https://github.com/occupyashanti/safarifi)
 
 ---
 
